@@ -29,7 +29,7 @@ const app = express();
 app.use(helmet());
 app.disable("x-powered-by");
 
-let port = process.env.PORT | 3000;
+const port = process.env.PORT | 3000;
 
 // Restrict all routes to only 100 requests per IP address every 1o minutes
 const limiter = rateLimit({

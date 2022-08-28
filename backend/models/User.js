@@ -40,7 +40,6 @@ UserSchema.pre('remove', async function(next) {
 	const user = this;
 	const id = new mongoose.Types.ObjectId(req.params.id);
 
-	await File.deleteMany({userId:id});
 	next();
 });
 

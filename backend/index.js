@@ -7,6 +7,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 
+// Swagger imports
+const  swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
 // security packages
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
@@ -28,6 +32,25 @@ const app = express();
 // secure headers
 app.use(helmet());
 app.disable("x-powered-by");
+
+//Swagger config
+const swaggerOptions = {
+	swaggerDefinition: {
+		info: {
+			title: "Netcad3d API",
+			description: "Netcad3d API Information",
+			contact:{
+				name: "Netcad3d Dev Team",
+				url: "https://netcad3d.com",
+			}
+		},
+		servers: ["https://netcad-vtk.herokuapp.com/"],
+		api:["index.js","routes/*.js"]
+	}
+}
+
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 
 const port = process.env.PORT || 3000;
 

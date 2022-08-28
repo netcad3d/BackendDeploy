@@ -56,11 +56,20 @@ router.post("/uploads", [upload.single("file"), requireAuth], (req, res) => {
 
 //! @route GET /fetchFiles
 //! @desc Fetch all user files from DB
+/** 
+* @Swagger
+* /fetchFiles:
+* get:
+*   description: Fetch all user files from DB
+*   responses:
+*	 '200':
+*		description: Success
+**/
 router.get("/fetchFiles", requireAuth, async (req, res) => {
   const userId = req.user._id;
   const files = await File.find({ userId });
 
-  res.json(files);
+  res.status(200).json(files);
 });
 
 //! @route GET /fetchFile/:id

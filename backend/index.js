@@ -53,7 +53,7 @@ const definition= {
 const swaggerOptions = {
 		definition,
 		servers: ["https://netcad-vtk.herokuapp.com/"],
-		apis:[`${__dirname}/index.js`,`${__dirname}/routes/FileOperationsRoute.js`]
+		apis:[`${__dirname}/index.js`,`${__dirname}/FileOperationsRoute.js`]
 	
 }
 

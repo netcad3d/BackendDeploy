@@ -45,7 +45,7 @@ const swaggerOptions = {
 			}
 		},
 		servers: ["https://netcad-vtk.herokuapp.com/"],
-		api:["index.js","routes/*.js"]
+		api:["index.js"]
 	}
 }
 

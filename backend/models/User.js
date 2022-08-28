@@ -36,12 +36,12 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-UserSchema.pre('remove', async function(next) {
+/*UserSchema.pre('remove', async function(next) {
 	const user = this;
 	const id = new mongoose.Types.ObjectId(req.params.id);
 
 	next();
-});
+});*/
 
 const User = mongoose.model("User", UserSchema);
 

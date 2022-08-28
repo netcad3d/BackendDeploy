@@ -33,22 +33,28 @@ const app = express();
 app.use(helmet());
 app.disable("x-powered-by");
 
+
+
 //Swagger config
-const swaggerOptions = {
-	definition: {
-		openapi: '3.0.0',
-		info: {
-			title: "Netcad3d API",
-			version: '1.0.0',
-			description: "Netcad3d API Information",
-			contact:{
-				name: "Netcad3d Dev Team",
-				url: "https://netcad3d.com",
+const definition= {
+	openapi: '3.0.0',
+	info: {
+		
+		title: "Netcad3d API",
+		version: '1.0.0',
+		description: "Netcad3d API Information",
+		contact:{
+			name: "Netcad3d Dev Team",
+			url: "https://netcad3d.com",
 			}
-		},
+		}
+	}
+
+const swaggerOptions = {
+		definition,
 		servers: ["https://netcad-vtk.herokuapp.com/"],
 		apis:["index.js","routes/*.js"]
-	}
+	
 }
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);

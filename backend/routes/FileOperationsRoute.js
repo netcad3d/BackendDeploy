@@ -57,9 +57,9 @@ router.post("/uploads", [upload.single("file"), requireAuth], (req, res) => {
 //! @route GET /fetchFiles
 //! @desc Fetch all user files from DB
 /** 
-* @openapi
+* @swagger
 * 	/fetchFiles:
-* 	get:
+*   get:
 *   description: Fetch all user files from DB
 *   responses:
 *	 '200':

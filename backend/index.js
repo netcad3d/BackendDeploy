@@ -35,9 +35,11 @@ app.disable("x-powered-by");
 
 //Swagger config
 const swaggerOptions = {
-	swaggerDefinition: {
+	definition: {
+		openapi: '3.0.0',
 		info: {
 			title: "Netcad3d API",
+			version: '1.0.0',
 			description: "Netcad3d API Information",
 			contact:{
 				name: "Netcad3d Dev Team",

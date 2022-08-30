@@ -13,7 +13,7 @@ router.delete('/:id', async (req, res) => {
 	const id = new mongoose.Types.ObjectId(req.params.id);
 	const user = await User.findOne({ _id: id });
 	if (!user) return res.status(400).send({ message: "User not found" });
-	File.deleteMany({ userId: id });
+	
 	user.remove();
 
 

@@ -25,7 +25,7 @@ connection.once("open", () => {
 router.delete('/:id', async (req, res) => {
 	console.log("delete sta");
 
-	const id = new mongoose.Types.ObjectId(req.params.id);
+	const id = req.params.id;
 	console.log(id);
 	const user = await User.findOne({ _id: id });
 	if (!user) return res.status(400).send({ message: "User not found" });

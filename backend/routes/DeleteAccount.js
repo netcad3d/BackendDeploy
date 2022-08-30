@@ -2,7 +2,7 @@ const router=require('express').Router();
 const requireAuth=require('../middlewares/requireAuth');
 const mongoose = require("mongoose");
 const { User } = require("../models/User");
-const { File } = require("../models/File");
+const File  = require("../models/File");
 const upload = require("../middlewares/upload");
 const Grid = require("gridfs-stream");
 
